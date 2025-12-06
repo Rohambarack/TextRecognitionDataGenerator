@@ -12,7 +12,7 @@ with open(path.join(here, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="trdg",
-    version="1.8.0",
+    version="1.8.1",
     description="TextRecognitionDataGenerator: A synthetic data generator for text recognition",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -45,7 +45,6 @@ setup(
         "tqdm>=4.23.0",
         "wikipedia>=1.4.0",
         "diffimg==0.2.3",
-        "arabic-reshaper==2.1.3",
         "python-bidi==0.4.2",
     ],
     entry_points={
