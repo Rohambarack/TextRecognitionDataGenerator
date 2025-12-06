@@ -5,7 +5,7 @@ from trdg.data_generator import FakeTextDataGenerator
 from trdg.utils import load_dict, load_fonts
 
 # support RTL
-from arabic_reshaper import ArabicReshaper
+#from arabic_reshaper import ArabicReshaper
 from bidi.algorithm import get_display
 
 
@@ -58,7 +58,7 @@ class GeneratorFromStrings:
                 ar_reshaper_config = {"delete_harakat": True, "language": "Kurdish"}
             else:
                 ar_reshaper_config = {"delete_harakat": False}
-            self.rtl_shaper = ArabicReshaper(configuration=ar_reshaper_config)
+            #self.rtl_shaper = ArabicReshaper(configuration=ar_reshaper_config)
             # save a backup of the original strings before arabic-reshaping
             self.orig_strings = self.strings
             # reshape the strings
@@ -138,13 +138,13 @@ class GeneratorFromStrings:
             else self.strings[(self.generated_count - 1) % len(self.strings)],
         )
 
-    def reshape_rtl(self, strings: list, rtl_shaper: ArabicReshaper):
-        # reshape RTL characters before generating any image
-        rtl_strings = []
-        for string in strings:
-            reshaped_string = rtl_shaper.reshape(string)
-            rtl_strings.append(get_display(reshaped_string))
-        return rtl_strings
+    #def reshape_rtl(self, strings: list, rtl_shaper: ArabicReshaper):
+     #   # reshape RTL characters before generating any image
+      #  rtl_strings = []
+       # for string in strings:
+        #    reshaped_string = rtl_shaper.reshape(string)
+         #   rtl_strings.append(get_display(reshaped_string))
+       # return rtl_strings
 
 
 if __name__ == "__main__":
