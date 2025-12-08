@@ -177,6 +177,14 @@ def parse_arguments():
         default=0,
     )
     parser.add_argument(
+        "-rgb_v",
+        "--rgb_values",
+        type=list[int],
+        nargs="?",
+        help="rbg values for the background image",
+        default=[255,255,255],
+    )
+    parser.add_argument(
         "-hw",
         "--handwritten",
         action="store_true",
