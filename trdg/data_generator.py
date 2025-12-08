@@ -35,6 +35,7 @@ class FakeTextDataGenerator(object):
         blur: int,
         random_blur: bool,
         background_type: int,
+        RGB_vals: list[int],
         distorsion_type: int,
         distorsion_orientation: int,
         is_handwritten: bool,
@@ -169,6 +170,11 @@ class FakeTextDataGenerator(object):
         elif background_type == 2:
             background_img = background_generator.quasicrystal(
                 background_height, background_width
+            )
+        elif background_type == 3:
+            assert len(RGB_vals) == 3, "NO RGB value provided for background"
+            background_img = background_generator.noise_rgb(
+                background_height, background_width, RGB_vals,
             )
         else:
             background_img = background_generator.image(
