@@ -60,6 +60,8 @@ def plain_rgb(height: int,
     """
     Create a plain RGB background
     """
+    #how did this become a tuple?
+    RGB_vals = RGB_vals[0]
     return Image.new("RGBA", (width, height), (RGB_vals[0],RGB_vals[1],RGB_vals[2]))
 
 def noise_rgb(height: int, 
