@@ -53,7 +53,26 @@ def quasicrystal(height: int, width: int) -> Image:
             c = int(255 - round(255 * z / rotation_count))
             pixels[kw, kh] = c  # grayscale
     return image.convert("RGBA")
+    
+def plain_rgb(height: int, 
+              width: int,
+              RGB_vals:list[int])-> Image:
+    """
+    Create a plain RGB background
+    """
+    return Image.new("RGBA", (width, height), (RGB_vals[0],RGB_vals[1],RGB_vals[2]))
 
+def noise_rgb(height: int, 
+              width: int,
+              RGB_vals:list[int])-> Image:
+    """
+    Create a noisy RGB background
+    """
+    
+    noise_pic = gaussian_noise(height: int, width: int)
+    rgb_pic = plain_rgb(height,width,RGB_vals)
+    
+    return Image.fromarray(np.array(rgb_pic) + np.array(noise_pic))
 
 def image(height: int, width: int, image_dir: str) -> Image:
     """
