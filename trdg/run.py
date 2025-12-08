@@ -458,6 +458,7 @@ def main():
                 [args.blur] * string_count,
                 [args.random_blur] * string_count,
                 [args.background] * string_count,
+                [args.rgb_values] * string_count,
                 [args.distorsion] * string_count,
                 [args.distorsion_orientation] * string_count,
                 [args.handwritten] * string_count,
