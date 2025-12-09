@@ -172,7 +172,7 @@ class FakeTextDataGenerator(object):
                 background_height, background_width
             )
         elif background_type == 3:
-            assert len(RGB_vals) == 3, "NO RGB value provided for background"
+            assert len(RGB_vals[0]) == 3, "NO RGB value provided for background"
             background_img = background_generator.noise_rgb(
                 background_height, background_width, RGB_vals,
             )
