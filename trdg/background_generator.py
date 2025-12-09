@@ -71,7 +71,7 @@ def noise_rgb(height: int,
     Create a noisy RGB background
     """
     
-    noise_pic = gaussian_noise(height: int, width: int)
+    noise_pic = gaussian_noise(height, width)
     rgb_pic = plain_rgb(height,width,RGB_vals)
     
     return Image.fromarray(np.array(rgb_pic) + np.array(noise_pic))
